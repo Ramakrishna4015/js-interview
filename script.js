@@ -105,14 +105,15 @@ console.log(counter(1));
 
 ////call
 const person={
-   firstName :"kodimoju",
+   firstName :"k",
    lastName :"ramakrishna"
 }
 function greet(greeting,puctuation){
       console.log(greeting +" " + this.firstName + " "+this.lastName + puctuation );
       
 }
-greet.call(person,'hello','!');
+greet('hello','!');
+greet.call(person,'hello','!')
 ////apply
 
 
