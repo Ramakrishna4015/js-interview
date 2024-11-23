@@ -115,6 +115,83 @@ function greet(greeting,puctuation){
 greet('hello','!');
 greet.call(person,'hello','!')
 ////apply
+const person1={
+   firstName :"k",
+   lastName :"ram"
+}
+function greet1(greeting,puctuation){
+      console.log(greeting +" " + this.firstName + " "+this.lastName + puctuation );
+      
+}
+greet1('hello','!');
+greet1.apply(person1,['hello','!'])
+
+///bind
+const person2 ={
+   firstName : 'k',
+   lastName : 'akhil'
+}
+function greet2(greeting,puctuation){
+   console.log(greeting +" " + this.firstName + " "+this.lastName + puctuation );
+   
+}
+const bindFun = greet2.bind(person2,'hey','!')
+console.log(bindFun);
+
+bindFun()
+// const bindFun = greet2.bind(person2)
+// console.log(bindFun);
+
+// bindFun('hey','!')
+
+//bind diesnt invoke the func directly but it creates a copy
+//which will be execu later 
+
+//// ways to create an object
+//lierals
+let details1 ={
+      name:"rk",
+      city :"hyd"
+}
+console.log(details1);
+//constructor
+let details2 =  new Object()
+details2.name = "krk",
+details2.city = 'hyderabad'
+console.log(details2);
+///object.Create()
+//this is used when we ant to inherit properties from an existting object while creating a new object
+let details3 = {
+   name:'prudvi',
+   city :'sec'
+}
+let human = Object.create(details3)
+console.log(human.name);
+console.log(Object.getOwnPropertyNames(human));
+console.log(Object.keys(human)); 
+
+//for in => used to iterate over ennumerable properites of an object
+
+for(let key in human){
+   console.log(key+ ":"+human[key]);
+   
+}
+
+//Object.assign()
+let name ={
+   firstName : "ramakrishna",
+
+}
+let role={
+   occupation:"student"
+}
+let guy =Object.assign({},name,role)
+console.log(guy);
+for(let key in guy){
+   console.log(key +guy[key]);
+   
+}
+
 
 
 
